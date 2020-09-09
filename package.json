@@ -1,0 +1,28 @@
+{
+  "name": "goit-node-hw-02",
+  "version": "1.0.0",
+  "description": "node hw-02",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./API/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/realtril/goit-node-hw-02.git"
+  },
+  "author": "Oleksandr Tril",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/realtril/goit-node-hw-02/issues"
+  },
+  "homepage": "https://github.com/realtril/goit-node-hw-02#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "joi": "^17.2.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4",
+    "uid": "^1.0.0"
+  }
+}
