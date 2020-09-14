@@ -58,7 +58,7 @@ async function updateContact(req, res, next) {
     const { contactId } = req.params;
     const contact = await contactsModel.getContactById(contactId);
     if (!contact) {
-      return res.status(404).send({ message: "contact deleted" });
+      return res.status(404).send({ message: "contact not found!" });
     }
     const updatedContact = await contactsModel.updateExistedContact(
       contactId,

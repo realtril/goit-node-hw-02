@@ -56,16 +56,15 @@ async function addContact({ name, email, phone }) {
 
 async function updateExistedContact(contactId, dataForUpdate) {
   try {
-    console.log(dataForUpdate);
     const contacts = await fsPromises.readFile(contactsPath, encoding);
     const parsedData = JSON.parse(contacts);
-    const foundIndex = parsedData.findIndex((x) => x.id === contactId);
+    const foundIndex = parsedData.findIndex((x) => String(x.id) === contactId);
     if (foundIndex === -1) {
       return null;
     }
     parsedData[foundIndex] = { ...parsedData[foundIndex], ...dataForUpdate };
     await fsPromises.writeFile(contactsPath, JSON.stringify(parsedData));
-    return contacts[foundIndex];
+    return parsedData[foundIndex];
   } catch (err) {
     console.error(err);
   }
