@@ -27,7 +27,8 @@ exports.CRUDServer = class CRUDServer {
 
   initMiddlewares() {
     this.app.use(express.json());
-    // this.app.use(cors());
+    this.app.use(cors());
+    this.app.use(morgan("combined"));
   }
 
   initRoutes() {
