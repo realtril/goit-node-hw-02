@@ -21,7 +21,7 @@ const updateContactScheme = Joi.object({
 router.post(
   "/",
   validate(createContactSchema),
-  tcWrapper(contactsController.addNewContact)
+  tcWrapper(tcWrapper(contactsController.addNewContact))
 );
 
 router.get("/", tcWrapper(contactsController.getContacts));
@@ -30,6 +30,6 @@ router.delete("/:contactId", tcWrapper(contactsController.deleteContact));
 router.patch(
   "/:contactId",
   validate(updateContactScheme),
-  contactsController.updateContact
+  tcWrapper(contactsController.updateContact)
 );
 exports.contactRouter = router;
